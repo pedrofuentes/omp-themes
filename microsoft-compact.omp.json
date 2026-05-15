@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "final_space": true,
+  "palette": {
+    "fluent-blue": "#0078D4",
+    "ms-red": "#F25022",
+    "ms-green": "#7FBA00",
+    "ms-blue": "#00A4EF",
+    "ms-yellow": "#FFB900",
+    "text-primary": "#F2F2F2",
+    "text-secondary": "#CCCCCC",
+    "text-muted": "#767676",
+    "campbell-red": "#E74856"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:fluent-blue",
+          "template": "{{ .UserName }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:text-muted",
+          "template": "in "
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:ms-blue",
+          "properties": {
+            "style": "full"
+          },
+          "template": "{{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:ms-green",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "branch_ahead_icon": "\u2191",
+            "branch_behind_icon": "\u2193",
+            "branch_gone_icon": "\u2262",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "merge_icon": "\ue727 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 ",
+            "fetch_status": true
+          },
+          "template": "<p:text-muted>on</> {{ .HEAD }}{{ if .Staging.Changed }}<p:ms-green> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<p:ms-yellow> \u25cf {{ .Working.String }}</>{{ end }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fluent-blue",
+          "template": "\uDB80\uDF72 "
+        }
+      ]
+    }
+  ]
+}
