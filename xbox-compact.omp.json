@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "final_space": true,
+  "palette": {
+    "xbox-green": "#107C10",
+    "xbox-bright": "#52B043",
+    "xbox-neon": "#9BF00B",
+    "xbox-white": "#FFFFFF",
+    "xbox-light": "#D2D2D2",
+    "xbox-orange": "#F7630C",
+    "xbox-blue": "#0078D4"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:xbox-green",
+          "template": "{{ .UserName }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:xbox-light",
+          "template": "in "
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:xbox-bright",
+          "properties": {
+            "style": "full"
+          },
+          "template": "{{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:xbox-blue",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "branch_ahead_icon": "\u2191",
+            "branch_behind_icon": "\u2193",
+            "branch_gone_icon": "\u2262",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "merge_icon": "\ue727 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 ",
+            "fetch_status": true
+          },
+          "template": "<p:xbox-light>on</> {{ .HEAD }}{{ if .Staging.Changed }}<p:xbox-bright> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<p:xbox-orange> \u25cf {{ .Working.String }}</>{{ end }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:xbox-green",
+          "template": "\uDB81\uDDB9 "
+        }
+      ]
+    }
+  ]
+}
